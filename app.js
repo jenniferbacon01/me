@@ -6,9 +6,11 @@ app.listen(process.env.PORT || 3000, function () {
   console.log('Example app listening on port 3000!')
 })
 
+app.use( express.static( "public" ) );
+
 app.set('view engine', 'ejs');
 
-app.use( express.static( "public" ) );
+
 
 app.get('/', function (req, res) {
   res.render('aboutme');
